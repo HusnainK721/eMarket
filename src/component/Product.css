@@ -1,0 +1,21 @@
+.productitem{
+    background-color: rgb(117, 117, 117);
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px black;
+};
+
+.productlist{
+    margin: 5px;
+    padding: 5px;
+    background-color: rgb(165, 64, 64) !important;
+}
+.topnav{
+    padding: 5px;
+    margin: 5px;
+    background-color: rgb(33,37,41);
+}
+Col{
+    color: white;
+}
