@@ -9,20 +9,8 @@ const ProductItem = () => {
     <div>
       <Card className="productitem">
         <Row>
-          <Col>
-            <Button
-              onClick={() =>
-                dispatch({
-                  type: "ADD_PRODUCT",
-                  data: ["soap", "tata namak"],
-                })
-              }
-            >
-              +
-            </Button>
-          </Col>
-          <Col>
-            <Button
+        <Col>
+            <Button variant="light"
               onClick={() =>
                 dispatch({
                   type: "REMOVE_PRODUCT",
@@ -33,6 +21,19 @@ const ProductItem = () => {
               -
             </Button>
           </Col>
+          <Col>
+            <Button variant="light"
+              onClick={() =>
+                dispatch({
+                  type: "ADD_PRODUCT",
+                  data: ["soap", "tata namak"],
+                })
+              }
+            >
+              +
+            </Button>
+          </Col>
+          
         </Row>
       </Card>
     </div>
