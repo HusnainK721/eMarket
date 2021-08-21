@@ -18,7 +18,7 @@ export const TopNav = () => {
     </Container>
   </Navbar>
         </Col>
-        <Col md={2}>cart:{product.length}</Col>
+        <Col md={2} className="call">cart:{product.length}</Col>
       </Row>
     </Card>
   );
