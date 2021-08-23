@@ -2,13 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Row, Col, Card, Navbar, Container, Nav, Form } from "react-bootstrap";
 
-export const TopNav = () => {
-  const [searchTxt, setSearchTxt] = useState(" ");
+export const TopNav = ({ setSearchTxt }) => {
   const products = useSelector((state) => state.productReducer.product);
-  console.log(products);
-  useEffect(() => {
-    console.log("searchtxt---", searchTxt);
-  }, [searchTxt]);
+
   return (
     <Card className="topnav">
       <Row>
