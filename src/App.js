@@ -1,16 +1,16 @@
-// import logo from './logo.svg';
-import './App.css';
-import { Provider } from 'react-redux';
-import { configStore } from './state/store/configStore';
-import {Home} from './component/Home';
+import React from "react";
+import { Provider } from "react-redux";
+import { configStore } from "./state/store/configStore";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Home } from "./component/Home";
 
 function App() {
-  const localStore=configStore();
+  const localStore = configStore();
   return (
-    <div className="App">
+    <div>
       <Provider store={localStore}>
-     <Home/>
-     </Provider>
+        <Home />
+      </Provider>
     </div>
   );
 }

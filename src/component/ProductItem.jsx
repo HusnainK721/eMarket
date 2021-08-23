@@ -1,43 +1,48 @@
 import React from "react";
-import { Card, Row, Col, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import "../component/Product.css";
+import { Row, Col, Card, Button, Form, Image } from "react-bootstrap";
 
-const ProductItem = () => {
+export const ProductItem = ({ item }) => {
   const dispatch = useDispatch();
+  console.log("Item====>", item);
   return (
-    <div>
-      <Card className="productitem">
-        <Row>
+    <Card className="productitem">
+      <Row>
+        <Image src={`${item.image}`} width="100px" height="300px" />
+      </Row>
+      <Row>
+        <Form.Label>{item.title}</Form.Label>
+      </Row>
+      <Row>
+        <Form.Label>${item.price}</Form.Label>
+      </Row>
+
+      <Row>
         <Col>
-            <Button variant="light"
-              onClick={() =>
-                dispatch({
-                  type: "REMOVE_PRODUCT",
-                  data: ["soap"],
-                })
-              }
-            >
-              -
-            </Button>
-          </Col>
-          <Col>
-            <Button variant="light"
-              onClick={() =>
-                dispatch({
-                  type: "ADD_PRODUCT",
-                  data: ["soap", "tata namak"],
-                })
-              }
-            >
-              +
-            </Button>
-          </Col>
-          
-        </Row>
-      </Card>
-    </div>
+          <Button
+            onClick={() =>
+              dispatch({
+                type: "REMOVE_PRODUCT",
+                data: "Soap",
+              })
+            }
+          >
+            -
+          </Button>
+        </Col>
+        <Col>
+          <Button
+            onClick={() =>
+              dispatch({
+                type: "ADD_PRODUCT",
+                data: ["Soap", "Tata Namak"],
+              })
+            }
+          >
+            +
+          </Button>
+        </Col>
+      </Row>
+    </Card>
   );
 };
-
-export default ProductItem;
