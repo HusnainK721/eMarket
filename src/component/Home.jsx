@@ -4,9 +4,10 @@ import { ProductList } from "./Productlist";
 import { getProducts } from "../Services/Products";
 import { TopNav } from "./TopNav";
 import "./Product.css";
+import { ProductsDetails } from "./ProductsDetails/ProductsDetails";
 
 export const Home = () => {
-  const [searchTxt, setSearchTxt] = useState(" ");
+  const [searchTxt, setSearchTxt] = useState("");
 
   const dispatch = useDispatch();
   const allProducts = async () => {
@@ -22,8 +23,11 @@ export const Home = () => {
   }, []);
   return (
     <div>
-      <TopNav setSearchTxt={setSearchTxt} />
-      <ProductList searchTxt={searchTxt} />
+      <Router>
+        <TopNav setSearchTxt={setSearchTxt} />
+        <ProductList searchTxt={searchTxt} />
+        <ProductsDetails />
+      </Router>
     </div>
   );
 };
