@@ -32,6 +32,7 @@ export const TopNav = ({ setSearchTxt }) => {
           <Form.Control
             type="text"
             onChange={(e) => setSearchTxt(e.target.value)}
+            placeholder="Search Here..."
           ></Form.Control>
         </Col>
         <Col md={2} className="nav">
