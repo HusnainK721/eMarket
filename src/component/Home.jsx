@@ -28,12 +28,14 @@ export const Home = () => {
         <TopNav setSearchTxt={setSearchTxt} />
 
         <Switch>
-          <Route path="/">
-            <ProductList searchTxt={searchTxt} />
-          </Route>
-          <Route path="/details">
-            <ProductsDetails />
-          </Route>
+          <div>
+            <Route exact path="/">
+              <ProductList searchTxt={searchTxt} />
+            </Route>
+            <Route path="/details">
+              <ProductsDetails />
+            </Route>
+          </div>
         </Switch>
       </Router>
     </div>
