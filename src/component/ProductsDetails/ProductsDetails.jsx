@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Card, Row, Col, Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 export const ProductsDetails = () => {
-  const [selectedProduct, setSelectedProduct] = useState();
-  const myproduct = useSelector((state) => state.productReducers.ProductItem);
-  const selectedId = useSelector(
-    (state) => state.productReducers.selectedprodid
-  );
+  const [selectedProduct, setSelectedProduct] = useState([]);
+  const myproduct = useSelector((state) => state.productReducer.product);
+  const selectedId = useSelector((state) => state.productReducers.selectedId);
 
   useEffect(() => {
     const filteredProd = myproduct.filter((item) => item.id === selectedId);
+    console.log(selectedId);
+    setSelectedProduct([...filteredProd]);
   }, [selectedId]);
   return (
     <div>
@@ -21,7 +22,9 @@ export const ProductsDetails = () => {
         </Row>
         <Row>
           <Col md={1}>
-            <Button>Back</Button>
+            <Link to="/">
+              <Button>Back</Button>
+            </Link>
           </Col>
         </Row>
       </Card>
