@@ -9,13 +9,13 @@ export const TopNav = ({ setSearchTxt }) => {
     <Card className="topnav">
       <Row>
         <Col md={8}>
-          <Navbar bg="dark" variant="dark">
+          <Navbar bg="light" variant="light">
             <Container>
               <Navbar.Brand href="#home">
                 <img
                   alt=""
                   src="kk2.png"
-                  width="60"
+                  width="90"
                   height="30"
                   className="d-inline-block align-top"
                 />{" "}
